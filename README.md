@@ -1,5 +1,5 @@
 # Roblox-API
-** Đây một ứng dụng web đơn giản cho phép người dùng lấy thông tin từ Roblox thông qua API. Ứng dụng này giúp người dùng nhanh chóng truy cập các dữ liệu cần thiết về người dùng và nhóm trên nền tảng Roblox. ** 
+### Đây một ứng dụng web đơn giản cho phép người dùng lấy thông tin từ Roblox thông qua API. Ứng dụng này giúp người dùng nhanh chóng truy cập các dữ liệu cần thiết về người dùng và nhóm trên nền tảng Roblox. 
 
 ## Tính năng:
 
@@ -12,7 +12,7 @@
 - Lấy danh sách bạn bè
 - Tìm kiếm nhóm
 
-** * Tùy chọn lọc nâng cao: Cho phép người dùng lọc bạn bè theo trạng thái trực tuyến và thời gian. **
+### * Tùy chọn lọc nâng cao: Cho phép người dùng lọc bạn bè theo trạng thái trực tuyến và thời gian. 
 
 
 ## Logic hoạt động:
