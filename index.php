@@ -196,8 +196,6 @@ echo "<strong>Username:</strong> {$userData['name']}<br>";
 echo "<strong>Tên hiển thị:</strong> {$userData['displayName']}<br>";
 echo "<strong>ID: </strong> <a href='https://www.roblox.com/users/{$userData['id']}/profile?friendshipSourceType=PlayerSearch' target='_blank'> {$userData['id']}</a> <br>";
 echo "<strong>Mô tả:</strong> " . ($userData['description'] ?: 'Không có mô tả') . "<br>";
-echo "<strong>Ngày tạo:</strong> " . date('d-m-Y | H:i:s', strtotime($userData['created'])) . "<br>";
-echo "<strong>Bị cấm:</strong> " . ($userData['isBanned'] ? 'Có' : 'Không') . "<br>";
 echo "<strong>Tên hiển thị từ ứng dụng bên ngoài:</strong> " . ($userData['externalAppDisplayName'] ?: 'Không có') . "<br>";
 
 $hasVerifiedBadge = $userData['hasVerifiedBadge']; // Lấy thông tin huy hiệu
@@ -223,8 +221,7 @@ echo "<strong>Huy hiệu:</strong> " . ($hasVerifiedBadge ? 'Có' : 'Không có'
                 foreach ($firstFriendFriendsData['data'] as $friend) {
                     if ($friend['id'] == $userId) {
                         $foundSelfStatus = true;
-                        // Nếu tìm thấy, hiển thị trạng thái của bạn
-                        echo "<strong>Trạng thái:</strong> " . ($friend['isOnline'] ? 'Online' : 'Offline') . "<br>";
+                     
                         break;
                     }
                 }
@@ -359,17 +356,12 @@ elseif ($functionType === "friends") {
         // Kiểm tra nếu có dữ liệu bạn bè
         if (!empty($friendsData['data'])) {
             foreach ($friendsData['data'] as $friend) {
-                $friendDate = strtotime($friend['created']);
                 $friendName = strtolower($friend['name']);
                 $friendDisplayName = strtolower($friend['displayName']);
 
                 // Kiểm tra trạng thái bạn bè
-                if (
-                    ($statusFilter === "online" && $friend['isOnline']) ||
-                    ($statusFilter === "offline" && !$friend['isOnline']) ||
-                    empty($statusFilter)
-                ) {
-                    if ($friendDate >= $startDate && $friendDate <= $endDate) {
+               {
+        {
                         // Kiểm tra tên tìm kiếm
                         if (empty($searchName) || strpos($friendName, $searchName) !== false || strpos($friendDisplayName, $searchName) !== false) {
                             $filteredFriends[] = $friend; // Thêm bạn vào danh sách lọc
@@ -386,10 +378,6 @@ elseif ($functionType === "friends") {
                                            <strong>Username: </strong> {$friend['name']} <br>
                         <strong>ID: </strong>      <a href='https://www.roblox.com/users/{$friend['id']}/profile?friendshipSourceType=PlayerSearch' target='_blank'>{$friend['id']} </a><br>
                         <strong>Tên hiển thị:</strong> {$friend['displayName']}<br>
-                        <strong>Trạng thái:</strong> " . ($friend['isOnline'] ? 'Online' : 'Offline') . "<br>
-                        <strong>Deleted:</strong> " . ($friend['isDeleted'] ? 'Có' : 'Không') . " | 
-                        <strong>Banned:</strong> " . ($friend['isBanned'] ? 'Có' : 'Không') . "<br>
-                        <strong>Ngày tạo:</strong> " . date('d-m-Y', strtotime($friend['created'])) . "<br>
                     </li>";
                 }
                 echo "</ul></div>";
@@ -471,7 +459,6 @@ if (!isset($_GET['fetch']) || $_GET['fetch'] !== 'true') {
          echo "<strong>ID:</strong> <a href=\"https://www.roblox.com/users/$id/profile\" target=\"_blank\">
       {$userData['id']}</a> <br>";
              echo "<strong>Ngày tạo:</strong> " . date('d-m-Y | H:i:s', strtotime($userData['created'])) . "<br>";
-                echo "<strong>Bị cấm:</strong> " . ($userData['isBanned'] ? 'Có' : 'Không') . "<br>";
                 echo "<strong>Tên hiển thị từ ứng dụng bên ngoài:</strong> " . ($userData['externalAppDisplayName'] ?: 'Không có') . "<br>";
                 echo "<strong>Huy hiệu:</strong> " . ($userData['hasVerifiedBadge'] ? 'Có' : 'Không có') . "<br>";      
                 } else {
