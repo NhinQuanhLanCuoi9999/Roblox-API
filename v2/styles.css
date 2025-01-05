@@ -1,0 +1,120 @@
+ body {
+     font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 50px;
+        background-color: Azure;
+        color: #555;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        color: #4CAF50;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2.5rem; /* Cỡ chữ lớn hơn */
+        font-weight: bold;
+        letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
+    }
+
+    form {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px; /* Bo góc lớn hơn */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Đổ bóng rõ hơn */
+        width: 98%;
+        max-width: 600px;
+        text-align: center;
+        margin-bottom: 20px;
+        transition: transform 0.3s; /* Hiệu ứng khi hover */
+    }
+
+    form:hover {
+        transform: translateY(-5px); /* Nâng nhẹ khi hover */
+    }
+
+    input[type="number"], select, input[type="date"] {
+        max-width: 400px;
+        width: 100%;
+        padding: 14px; /* Tăng khoảng cách bên trong */
+        margin: 0 auto 16px auto;
+        border: 1px solid #ccc;
+        border-radius: 6px; /* Bo góc nhẹ nhàng */
+        font-size: 16px;
+        transition: border-color 0.3s, box-shadow 0.3s; /* Hiệu ứng cho input */
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px; /* Cỡ chữ lớn hơn */
+        font-weight: bold; /* Chữ đậm */
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 32px; /* Giảm cỡ chữ một chút */
+        margin: 20px 0;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        transform: scale(1.05); /* Tăng kích thước khi hover */
+    }
+
+    .user-info, #friendsList {
+        max-width: 98%;
+        margin: 40px auto;
+        padding: 130px; /* Giảm padding để nội dung không bị quá rộng */
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        font-family: 'Roboto Mono', monospace;
+        border-left: 5px solid #4CAF50; /* Đường viền bên trái để nhấn mạnh */
+       transform: translate(-130px, 0px); 
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 15px;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        background-color: #fafafa;
+        transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng cho các mục trong danh sách */
+    }
+
+    li:hover {
+        background-color: #f0f0f0; /* Màu nền sáng hơn khi hover */
+        transform: scale(1.02); /* Tăng kích thước một chút khi hover */
+    }
+
+    select:focus, input[type="number"]:focus, input[type="date"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+        box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Đổ bóng khi focus */
+    }
+
+    option {
+        padding: 10px;
+    }
+    .advanced-options {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
